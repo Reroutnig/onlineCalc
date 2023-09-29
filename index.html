@@ -1,46 +1,44 @@
 <!DOCTYPE html>
 <html lang="en-US">
-    <head>
+<head>
         <link href="style.css" rel="stylesheet"/>
         <meta http-equiv="X-UA-Compatiable" contents="IE=edge">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, intial-scale=1.0">
-    </head>
-    <body>
-        <main>
-            <table class="calculator" >
-                <tr>
-                  <td colspan="3"> <input class="display-box" type="text" id="result" disabled /> </td>
-                  
-                </tr>
-                <tr>
-                
-                  <td> <input type="button" value="7" onclick="display('7')" /> </td>
-                  <td> <input type="button" value="8" onclick="display('8')" /> </td>
-                  <td> <input type="button" value="9" onclick="display('9')" /> </td>
-                  <td> <input type="button" value="+" onclick="display('+')" /> </td>
-                </tr>
-                <tr>
-                  <td> <input type="button" value="4" onclick="display('4')" /> </td>
-                  <td> <input type="button" value="5" onclick="display('5')" /> </td>
-                  <td> <input type="button" value="6" onclick="display('6')" /> </td>
-                  <td> <input type="button" value="-" onclick="display('-')" /> </td>
-                </tr>
-                <tr>
-                  <td> <input type="button" value="1" onclick="display('1')" /> </td>
-                  <td> <input type="button" value="2" onclick="display('2')" /> </td>
-                  <td> <input type="button" value="3" onclick="display('3')" /> </td>
-                  <td> <input type="button" value="x" onclick="display('x')" /> </td>
-                </tr>
-                <tr>
-                  <td> <input type="button" value="C" onclick="clearScreen()" id="btn" /> </td>
-                  <td> <input type="button" value="0" onclick="display('0')" /> </td>
-               
-                 
-                  <td> <input type="button" value="=" onclick="calculate()" id="btn" /> </td>
-                  <td> <input type="button" value="/" onclick="display('/')" /> </td>
-                </tr>
-              </table>
-        </main>
+        <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="calc">
+                <input type="text" id="inputbox" placeholder="0"/>
+                <div>
+                    <button class="button">7</button>
+                    <button class="button">8</button>
+                    <button class="button">9</button>
+                    <button class="operator">+</button>
+                </div>
+                <div>
+                    <button class="button">4</button>
+                    <button class="button">5</button>
+                    <button class="button">6</button>
+                    <button class="operator">-</button>
+                </div>
+                <div>
+                    <button class="button">1</button>
+                    <button class="button">2</button>
+                    <button class="button">3</button>
+                    <button class="operator">x</button>
+                </div>
+                <div>
+                    <button class="operator">C</button>
+                    <button class="button">0</button>
+                    <button class="operator">=</button>
+                    <button class="operator">/</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        <script src="script.js"></script>
     </body>
 </html>
