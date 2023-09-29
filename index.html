@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
+        <Title>Calculator</Title>
         <link href="style.css" rel="stylesheet"/>
         <meta http-equiv="X-UA-Compatiable" contents="IE=edge">
         <meta charset="utf-8">
@@ -11,31 +12,34 @@
     <main>
         <div class="container">
             <div class="calc">
-                <input type="text" id="inputbox" placeholder="0"/>
+                    <form>
+                <input type="text" id="inputbox"/>
+                    </form>
                 <div>
-                    <button class="button">7</button>
-                    <button class="button">8</button>
-                    <button class="button">9</button>
-                    <button class="operator">+</button>
+                    <button class="button" val="7">7</button>
+                    <button class="button" val="8">8</button>
+                    <button class="button" val="9">9</button>
+                    <button class="operator" val="+">+</button>
                 </div>
                 <div>
-                    <button class="button">4</button>
-                    <button class="button">5</button>
-                    <button class="button">6</button>
-                    <button class="operator">-</button>
+                    <button class="button" val="4">4</button>
+                    <button class="button" val="5">5</button>
+                    <button class="button" val="6">6</button>
+                    <button class="operator" val="-">-</button>
                 </div>
                 <div>
-                    <button class="button">1</button>
-                    <button class="button">2</button>
-                    <button class="button">3</button>
-                    <button class="operator">x</button>
+                    <button class="button" val="1">1</button>
+                    <button class="button" val="2">2</button>
+                    <button class="button" val="3">3</button>
+                    <button class="operator" val="*">x</button>
                 </div>
                 <div>
-                    <button class="operator">C</button>
-                    <button class="button">0</button>
-                    <button class="operator">=</button>
-                    <button class="operator">/</button>
+                    <button class="operator" val="c">C</button>
+                    <button class="button" val="0">0</button>
+                    <button class="operator" val="=">=</button>
+                    <button class="operator" val="/">/</button>
                         </div>
+                    
                     </div>
                 </div>
             </main>
