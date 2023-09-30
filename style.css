@@ -48,3 +48,15 @@ button{
     background: rgba(255,255,255,0.1);
     cursor: pointer;
 }
+.clear{
+background: red;
+}
+.op{
+    background: rgb(138, 130, 130);
+}
+.num{
+    background: rgb(223, 208, 208);
+}
+.equal{
+    background: rgb(138, 130, 130);
+}
