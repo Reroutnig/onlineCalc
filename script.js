@@ -8,7 +8,7 @@ let answer=null;
 //stores value of button clicked
 function buttonClicked(value){
     if(answer !== null) {
-        // If there is a previous answer, clear it and start a new calculation
+        // clear calculation if there's a previous answer
         screen.value = '';
         answer = null;
     }
