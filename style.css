@@ -9,14 +9,14 @@ body{
     display:flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(45deg, #44364b, #3a4452);
+    background: linear-gradient(45deg, #874f85, #41296d);
 }
 
 .calc{
     border:3px solid #1f2021;
     padding:20px;
     border-radius:16px;
-    background: linear-gradient(45deg, #44364b, #3a4452);
+    background: linear-gradient(50deg, #2e43bb, #996a92);
     box-shadow:0px 3px 15px rgba(0, 0, 0, 0.8);
 }
 
@@ -26,26 +26,26 @@ form input{
     padding:24px;
     margin:10px;
     background: rgb(100, 116, 120);
-    box-shadow: 0px 3px 15px rgba(84,84,84,0.25);
     font-size: 40px;
     text-align:right;
     cursor:pointer;
     color:#fff6f6;
     pointer-events: none;
+    box-shadow:0px 3px 15px rgba(0, 0, 0, 0.6);
 }
 
 button{
     border:none;
+    box-shadow:0px 3px 15px rgba(0, 0, 0, 0.6);
     width:60px;
     height: 60px;
     margin:10px;
     border-radius: 20%;
-    background: transparent;
     font-size: 20px;
     cursor: pointer;
 }
 .clear{
-background: rgb(242, 72, 72);
+background: rgb(194, 67, 67);
 }
 .op{
     background: rgb(173, 116, 216);
