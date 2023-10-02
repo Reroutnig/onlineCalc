@@ -1,9 +1,25 @@
 (function(){
+
     let screen = document.querySelector('.input');
     let numpad = document.querySelectorAll('.button');
     let clear = document.querySelector('.clear');
     let equal = document.querySelector('.equal');
     let answer = null;
+
+let screen = document.querySelector('.input');
+let numpad = document.querySelectorAll('.button');
+let clear = document.querySelector('.clear');
+let equal = document.querySelector('.equal');
+let answer=null;
+//stores value of button clicked
+function buttonClicked(value){
+    if(answer !== null) {
+        // clear calculation if there's a previous answer
+        screen.value = '';
+        answer = null;
+    }
+    screen.value += value;
+}
 
     // Function to handle numerical button click
     function ContWithPrevAns(value){
@@ -37,10 +53,14 @@ numpad.forEach(function(button){
 });
 
    
+
     // when 'c' is clicked the screen will clear
     clear.addEventListener('click', function(e){
         screen.value = "";
         answer = null;
     });
+})();
+
+=======
 })();
 
