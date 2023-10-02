@@ -44,6 +44,5 @@ numpad.forEach(function(button){
     });
 })();
 
-=======
-})();
+
 
