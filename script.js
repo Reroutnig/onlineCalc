@@ -5,6 +5,7 @@
     let equal = document.querySelector('.equal');
     let answer = null;
 
+
     // Function to evaluate mathematical expression using switch cases
     function evaluateExpression(expression) {
         let numbers = expression.split(/[\+\-\*\/]/);
@@ -41,6 +42,7 @@
         return result;
     }
 
+
     // Function to handle numerical button click
     function ContWithPrevAns(value){
         if(answer !== null && screen.value === "") {
@@ -63,6 +65,7 @@
         }
     });
 
+
     // Displays numbers and operations on screen when clicked
     numpad.forEach(function(button){
         button.addEventListener('click', function(e) {
@@ -71,9 +74,11 @@
         });
     });
 
-    // When 'c' is clicked, clear the screen and reset the answer
+ 
+    // when 'c' is clicked the screen will clear
     clear.addEventListener('click', function(e){
         screen.value = "";
         answer = null;
     });
 })();
+
