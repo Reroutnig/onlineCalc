@@ -5,29 +5,33 @@
     let equal = document.querySelector('.equal');
     let answer = null;
 
-
-    // evalualtes the math expressions
+    // Function to evaluate mathematical expression using switch cases
     function evaluateExpression(expression) {
-        let numbers = expression.split(/[\+\-\*\/]/);
-        let operator = expression.match(/[\+\-\*\/]/);
-        let result;
+        let operators = expression.split(/[\d.]+/).filter(Boolean);
+        let numbers = expression.split(/[\+\-\*\/]/).map(parseFloat);
+        let result = numbers[0];
 
-        if (numbers.length === 2 && operator) {
-            let num1 = parseFloat(numbers[0]);
-            let num2 = parseFloat(numbers[1]);
-            switch (operator[0]) {
+        for (let i = 0; i < operators.length; i++) {
+            let operator = operators[i];
+            let num = numbers[i + 1];
+
+            if (isNaN(num) || num === undefined) {
+                return 'Error';
+            }
+
+            switch (operator) {
                 case '+':
-                    result = num1 + num2;
+                    result += num;
                     break;
                 case '-':
-                    result = num1 - num2;
+                    result -= num;
                     break;
                 case '*':
-                    result = num1 * num2;
+                    result *= num;
                     break;
                 case '/':
-                    if (num2 !== 0) {
-                        result = num1 / num2;
+                    if (num !== 0) {
+                        result /= num;
                     } else {
                         return 'Error';
                     }
@@ -35,17 +39,15 @@
                 default:
                     return 'Error';
             }
-        } else {
-            return 'Error';
         }
 
         return result;
     }
 
-
-   //saves the previous answer in order to use for next calculations if 'c' isn't clicked
+    
     function ContWithPrevAns(value){
         if(answer !== null && screen.value === "") {
+            // If there is a previous answer and screen is empty, use the answer for the new calculation
             screen.value = answer + value;
         } else {
             screen.value += value;
@@ -60,10 +62,9 @@
             screen.value = "";
         } else {
             answer = evaluateExpression(screen.value);
-            screen.value = answer;
+            screen.value = (answer === 'Error') ? 'Error' : parseFloat(answer.toFixed(2)); // Round the result to 2 decimal places
         }
     });
-
 
     // Displays numbers and operations on screen when clicked
     numpad.forEach(function(button){
@@ -73,8 +74,7 @@
         });
     });
 
- 
-    // when 'c' is clicked the screen will clear
+    // When 'c' is clicked, clear the screen and reset the answer
     clear.addEventListener('click', function(e){
         screen.value = "";
         answer = null;
