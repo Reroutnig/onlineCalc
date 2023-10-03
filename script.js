@@ -6,7 +6,7 @@
     let answer = null;
 
 
-    // Function to evaluate mathematical expression using switch cases
+    // evalualtes the math expressions
     function evaluateExpression(expression) {
         let numbers = expression.split(/[\+\-\*\/]/);
         let operator = expression.match(/[\+\-\*\/]/);
@@ -43,10 +43,9 @@
     }
 
 
-    // Function to handle numerical button click
+   //saves the previous answer in order to use for next calculations if 'c' isn't clicked
     function ContWithPrevAns(value){
         if(answer !== null && screen.value === "") {
-            // If there is a previous answer and screen is empty, use the answer for the new calculation
             screen.value = answer + value;
         } else {
             screen.value += value;
