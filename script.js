@@ -1,25 +1,45 @@
 (function(){
-
     let screen = document.querySelector('.input');
     let numpad = document.querySelectorAll('.button');
     let clear = document.querySelector('.clear');
     let equal = document.querySelector('.equal');
     let answer = null;
 
-let screen = document.querySelector('.input');
-let numpad = document.querySelectorAll('.button');
-let clear = document.querySelector('.clear');
-let equal = document.querySelector('.equal');
-let answer=null;
-//stores value of button clicked
-function buttonClicked(value){
-    if(answer !== null) {
-        // clear calculation if there's a previous answer
-        screen.value = '';
-        answer = null;
+    // Function to evaluate mathematical expression using switch cases
+    function evaluateExpression(expression) {
+        let numbers = expression.split(/[\+\-\*\/]/);
+        let operator = expression.match(/[\+\-\*\/]/);
+        let result;
+
+        if (numbers.length === 2 && operator) {
+            let num1 = parseFloat(numbers[0]);
+            let num2 = parseFloat(numbers[1]);
+            switch (operator[0]) {
+                case '+':
+                    result = num1 + num2;
+                    break;
+                case '-':
+                    result = num1 - num2;
+                    break;
+                case '*':
+                    result = num1 * num2;
+                    break;
+                case '/':
+                    if (num2 !== 0) {
+                        result = num1 / num2;
+                    } else {
+                        return 'Error';
+                    }
+                    break;
+                default:
+                    return 'Error';
+            }
+        } else {
+            return 'Error';
+        }
+
+        return result;
     }
-    screen.value += value;
-}
 
     // Function to handle numerical button click
     function ContWithPrevAns(value){
@@ -31,36 +51,29 @@ function buttonClicked(value){
         }
     }
 
-    
+    // When equal button is clicked, evaluate the expression and display the answer
+    equal.addEventListener('click', function(e){
+        // Checks if there's any values on screen
+        if(screen.value === '') {
+            // If empty, do nothing
+            screen.value = "";
+        } else {
+            answer = evaluateExpression(screen.value);
+            screen.value = answer;
+        }
+    });
 
- //when equal button is clicked shows answer
- equal.addEventListener('click', function(e){
-    //checks if there's any values on screen
-    if(screen.value === ''){ //if empty then dont show anything when equal sign is clicked
-        screen.value = "";
-    }else{
-         answer = eval(screen.value); 
-        screen.value = answer;
-    }
-})
+    // Displays numbers and operations on screen when clicked
+    numpad.forEach(function(button){
+        button.addEventListener('click', function(e) {
+            let value = e.target.dataset.val;
+            ContWithPrevAns(value);
+        });
+    });
 
-// displays numbers and operations on screen when clicked
-numpad.forEach(function(button){
-    button.addEventListener('click', function(e) {
-        let value=e.target.dataset.val;
-        ContWithPrevAns(value);
-    })
-});
-
-   
-
-    // when 'c' is clicked the screen will clear
+    // When 'c' is clicked, clear the screen and reset the answer
     clear.addEventListener('click', function(e){
         screen.value = "";
         answer = null;
     });
 })();
-
-=======
-})();
-
