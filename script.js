@@ -5,7 +5,10 @@
     let equal = document.querySelector('.equal');
     let answer = null;
 
+
+
     // evaluates math equations give by user
+
     function evalEquation(expression) {
         let operators = expression.split(/[\d.]+/).filter(Boolean);
         let numbers = expression.split(/[\+\-\*\/]/).map(parseFloat);
@@ -58,7 +61,8 @@
     equal.addEventListener('click', function(e){
         // Checks if there's any values on screen
         if(screen.value === '') {
-            // does nothing is there nothing on screen
+
+            // does nothing if there nothing on screen
             screen.value = "";
         } else {
             answer = evalEquation(screen.value);
@@ -80,4 +84,3 @@
         answer = null;
     });
 })();
-
