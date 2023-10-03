@@ -5,6 +5,7 @@
     let equal = document.querySelector('.equal');
     let answer = null;
 
+
     // evalualtes the math expressions
     function evaluateExpression(expression) {
         let numbers = expression.split(/[\+\-\*\/]/);
@@ -41,6 +42,7 @@
         return result;
     }
 
+
    //saves the previous answer in order to use for next calculations if 'c' isn't clicked
     function ContWithPrevAns(value){
         if(answer !== null && screen.value === "") {
@@ -62,6 +64,7 @@
         }
     });
 
+
     // Displays numbers and operations on screen when clicked
     numpad.forEach(function(button){
         button.addEventListener('click', function(e) {
@@ -70,9 +73,11 @@
         });
     });
 
-    // When 'c' is clicked, clear the screen and reset the answer
+ 
+    // when 'c' is clicked the screen will clear
     clear.addEventListener('click', function(e){
         screen.value = "";
         answer = null;
     });
 })();
+
